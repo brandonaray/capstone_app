@@ -1,0 +1,2 @@
+class EventSong < ApplicationRecord
+end

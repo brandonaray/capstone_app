@@ -1,0 +1,2 @@
+class CategorySong < ApplicationRecord
+end

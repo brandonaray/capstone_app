@@ -1,0 +1,2 @@
+class SongVersion < ApplicationRecord
+end
