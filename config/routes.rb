@@ -4,5 +4,7 @@ Rails.application.routes.draw do
     post "/users" => "users#create"
 
     post "/sessions" => "sessions#create"
+
+    get "/song_versions" => "song_versions#index"
   end
 end
