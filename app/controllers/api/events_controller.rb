@@ -10,8 +10,11 @@ class Api::EventsController < ApplicationController
       event_duration: params[:event_duration],
       event_status: "pending"
     )
-    @event.save
-    render "show.json.jbuilder"
+    if @event.save
+      render "show.json.jbuilder"
+    else 
+      render json: {errors: @event.errors.full_messages}, status: :unprocessable_entity
+    end
 
     def show
       @event = Event.find_by(id: params[:id])
