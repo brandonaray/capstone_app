@@ -15,5 +15,7 @@ Rails.application.routes.draw do
 
     post "/event_users" => "event_users#create"
     delete "/event_users/:id" => "event_users#destroy"
+
+    get "/event_songs" => "event_songs#index"
   end
 end
