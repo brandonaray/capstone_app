@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
     post "/sessions" => "sessions#create"
 
-    get "/song_versions" => "song_versions#index"
+    get "/songs" => "songs#index"
   end
 end
