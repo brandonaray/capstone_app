@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     patch "/events/:id" => "events#update"
 
     post "/event_users" => "event_users#create"
+    delete "/event_users/:id" => "event_users#destroy"
   end
 end
