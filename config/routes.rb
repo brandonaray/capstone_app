@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     get "/events" => "events#index"
     post "/events" => "events#create"
     get "/events/:id" => "events#show"
+    patch "/events/:id" => "events#update"
   end
 end
