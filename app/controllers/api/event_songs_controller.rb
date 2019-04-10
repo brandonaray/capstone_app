@@ -21,4 +21,10 @@ class Api::EventSongsController < ApplicationController
       render json: {errors: @event_song.errors.full_messages}, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @event_song = EventSong.find_by(id: params[:id])
+    @event_song.destroy
+    render json: {message: "Song removed from queue"}
+  end
 end
