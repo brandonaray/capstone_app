@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get "/song_versions/:id" => "song_versions#show"
 
     get "/categories" => "categories#index"
+    get "/categories/:id" => "categories#show"
 
     get "/events" => "events#index"
     post "/events" => "events#create"
