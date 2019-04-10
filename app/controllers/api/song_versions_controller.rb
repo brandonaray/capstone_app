@@ -5,4 +5,8 @@ class Api::SongVersionsController < ApplicationController
     render "index.json.jbuilder"
   end
 
+  def show
+    @song_version = SongVersion.find_by(id: params[:id])
+    render "show.json.jbuilder"
+  end
 end
