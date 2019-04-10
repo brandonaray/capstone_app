@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     delete "/event_users/:id" => "event_users#destroy"
 
     get "/event_songs" => "event_songs#index"
+    post "/event_songs" => "event_songs#create"
     get "/event_songs/:id" => "event_songs#show"
   end
 end
