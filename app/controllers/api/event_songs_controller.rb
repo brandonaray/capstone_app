@@ -15,7 +15,10 @@ class Api::EventSongsController < ApplicationController
       user_id: params[:user_id],
       event_id: params[:event_id]
     )
-    @event_song.save
-    render "show.json.jbuilder"
+    if @event_song.save
+      render "show.json.jbuilder"
+    else
+      render json: {errors: @event_song.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 end
