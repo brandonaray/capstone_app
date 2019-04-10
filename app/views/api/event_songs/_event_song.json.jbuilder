@@ -1,6 +1,11 @@
 json.id event_song.id
-json.song_version_id event_song.song_version_id
-json.user_id event_song.user_id
 json.event_id event_song.event_id
+json.song_version_id event_song.song_version_id
 json.song_title event_song.song_version.song.title
 json.song_artist event_song.song_version.song.artist
+json.song_label event_song.song_version.label
+json.song_duration event_song.song_version.duration
+json.song_url event_song.song_version.song_url
+json.song_lyrics event_song.song_version.lyrics
+json.user_id event_song.user_id
+json.user_name event_song.user.name
