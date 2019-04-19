@@ -132,8 +132,8 @@ CategorySong.create!(song_id: 2, category_id: 5)
 CategorySong.create!(song_id: 4, category_id: 1)
 CategorySong.create!(song_id: 5, category_id: 2)
 
-Event.create!(event_name: 1872, event_duration: 120, event_status: "active")
-Event.create!(event_name: 1508, event_duration: 90, event_status: "active")
+Event.create!(event_duration: 120, event_status: "active")
+Event.create!(event_duration: 90, event_status: "active")
 
 # EventUser.create!(user_id: 1, event_id: 1)
 # EventUser.create!(user_id: 1, event_id: 1)
