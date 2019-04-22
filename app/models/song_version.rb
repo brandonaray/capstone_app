@@ -1,5 +1,6 @@
 class SongVersion < ApplicationRecord
   belongs_to :song
+  has_many :event_songs
 
   def friendly_duration
     minutes = duration / 60
