@@ -5,4 +5,6 @@ class EventUser < ApplicationRecord
   belongs_to :event
   belongs_to :user
   has_many :event_songs
+
+  scope :active, -> { joins(:event).merge(Event.active)}
 end

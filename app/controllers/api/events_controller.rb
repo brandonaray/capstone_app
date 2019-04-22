@@ -8,7 +8,7 @@ class Api::EventsController < ApplicationController
     @event = Event.new(
       event_token: rand(1000..10000).to_s,
       event_duration: params[:event_duration],
-      event_status: "pending"
+      event_status: "active"
     )
     if @event.save
       render "show.json.jbuilder"

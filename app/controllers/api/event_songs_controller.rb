@@ -12,8 +12,7 @@ class Api::EventSongsController < ApplicationController
   def create
     @event_song = EventSong.new(
       song_version_id: params[:song_version_id],
-      user_id: params[:user_id],
-      event_id: params[:event_id]
+      event_user_id: current_event_user.id
     )
     if @event_song.save
       render "show.json.jbuilder"
