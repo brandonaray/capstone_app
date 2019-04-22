@@ -26,4 +26,10 @@ class ApplicationController < ActionController::Base
       render json: {}, status: :unauthorized
     end
   end
+
+  def current_event_user
+    return EventUser.active.find_by(user_id: current_user.id)
+  end
+
+  helper_method :current_event_user
 end
