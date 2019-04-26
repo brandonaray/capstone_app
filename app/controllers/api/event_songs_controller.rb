@@ -1,6 +1,6 @@
 class Api::EventSongsController < ApplicationController
   def index
-    @event_songs = EventSong.all
+    @event_songs = current_event_songs
     render "index.json.jbuilder"
   end
 

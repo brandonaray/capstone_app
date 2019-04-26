@@ -32,4 +32,16 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_event_user
+
+  def current_event_songs
+    result = []
+    EventSong.all.each do |event_song|
+      if  event_song.event_user.event_id == current_event_user.event_id
+        result << event_song
+      end
+    end
+    return result
+  end
+
+  helper_method :current_event_songs
 end
