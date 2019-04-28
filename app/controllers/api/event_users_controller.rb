@@ -3,7 +3,8 @@ class Api::EventUsersController < ApplicationController
   def create
     @event_user = EventUser.new(
       user_id: current_user.id,
-      event_id: params[:event_id]
+      event_id: params[:event_id],
+      status: "active"
     )
     if @event_user.save
       render "show.json.jbuilder"
