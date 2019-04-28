@@ -4,6 +4,7 @@ json.song_title event_song.song_version.song.title
 json.song_artist event_song.song_version.song.artist
 json.song_label event_song.song_version.label
 json.song_duration event_song.song_version.duration
+json.friendly_duration event_song.song_version.friendly_duration
 json.song_url event_song.song_version.song_url
 json.song_lyrics event_song.song_version.lyrics
 json.user_name event_song.event_user.user.name
