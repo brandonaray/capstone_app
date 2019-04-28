@@ -6,7 +6,7 @@ class Api::EventsController < ApplicationController
 
   def create
     @event = Event.new(
-      event_token: rand(1000..10000).to_s,
+      event_token: rand(1000..100000).to_s,
       event_duration: params[:event_duration],
       event_status: "active"
     )
