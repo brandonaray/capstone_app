@@ -15,7 +15,7 @@ class Api::EventUsersController < ApplicationController
 
   def destroy
     @event_user = EventUser.find_by(id: params[:id])
-    @event_user.destroy
+    @event_user.status = "inactive"
     render json: {message: "User successfully removed from event"}
   end
 
