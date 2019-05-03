@@ -27,7 +27,7 @@ class Api::EventSongsController < ApplicationController
     render json: {message: "Song removed from queue"}
   end
 
-  def update_orders
+  def update
     params[:ids].each_with_index do |id, index| 
       event_song = EventSong.find_by(id: id)
       event_song.update(order: index)

@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     get "/event_songs" => "event_songs#index"
     post "/event_songs" => "event_songs#create"
     get "/event_songs/:id" => "event_songs#show"
+    patch "/event_songs" => "event_songs#update"
     delete "/event_songs/:id" => "event_songs#destroy"
   end
 end
