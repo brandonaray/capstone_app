@@ -32,6 +32,6 @@ class Api::EventSongsController < ApplicationController
       event_song = EventSong.find_by(id: id)
       event_song.update(order: index)
     end
-
+    render "index.json.jbuilder"
   end
 end
