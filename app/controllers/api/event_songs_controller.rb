@@ -1,6 +1,6 @@
 class Api::EventSongsController < ApplicationController
   def index
-    @event_songs = current_event_songs.order(:order)
+    @event_songs = current_event_songs
     render "index.json.jbuilder"
   end
 
@@ -28,10 +28,10 @@ class Api::EventSongsController < ApplicationController
   end
 
   def update_orders
-    # you have params[:ids] which is an array of EventSong ids in the right order
-    # loop through params[:ids] (use each_with_index)
-    #   find the EventSong with the id
-    #   update the event song's order with the index
-    # render json with a message?
+    params[:ids].each_with_index do |id, index| 
+      event_song = EventSong.find_by(id: id)
+      event_song.update(order: index)
+    end
+
   end
 end

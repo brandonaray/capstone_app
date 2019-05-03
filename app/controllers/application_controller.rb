@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
 
   def current_event_songs
     result = []
-    EventSong.all.each do |event_song|
+    EventSong.all.order(:order).each do |event_song|
       if event_song.event_user.event_id == current_event_user.event_id
         result << event_song
       end
