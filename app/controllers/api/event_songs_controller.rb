@@ -15,6 +15,10 @@ class Api::EventSongsController < ApplicationController
       event_user_id: current_event_user.id
     )
     if @event_song.save
+
+      ActionCable.server.broadcast "messages_channel", {
+      message: "refresh true"
+    }
       render "show.json.jbuilder"
     else
       render json: {errors: @event_song.errors.full_messages}, status: :unprocessable_entity
@@ -24,6 +28,12 @@ class Api::EventSongsController < ApplicationController
   def destroy
     @event_song = EventSong.find_by(id: params[:id])
     @event_song.destroy
+
+    ActionCable.server.broadcast "messages_channel", {
+      message: "refresh true"
+    }
+
+    render "show.json.jbuilder"
     render json: {message: "Song removed from queue"}
   end
 
@@ -32,6 +42,9 @@ class Api::EventSongsController < ApplicationController
       event_song = EventSong.find_by(id: id)
       event_song.update(order: index)
     end
+    ActionCable.server.broadcast "messages_channel", {
+      message: "refresh true"
+    }
     render "index.json.jbuilder"
   end
 end
