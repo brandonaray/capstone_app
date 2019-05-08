@@ -4,7 +4,7 @@ class Api::EventUsersController < ApplicationController
     @event_user = EventUser.new(
       user_id: current_user.id,
       event_id: params[:event_id],
-      status: "active"
+      status: params[:status]
     )
     if @event_user.save
       render "show.json.jbuilder"
